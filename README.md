@@ -1,13 +1,13 @@
 # npm profile card
 
-[![npx tubone24](https://img.shields.io/badge/npx-tubone24-red?logo=npm)](https://www.npmjs.com/package/tubone24)
+[![npx bata515](https://img.shields.io/badge/npx-bata515-red?logo=npm)](https://www.npmjs.com/package/bata515)
 
 # Usage
 
 ## npx
 
 ```
-npx tubone24
+npx bata515
 ```
 
 ![demo](./docs/images/dmeo.gif)

@@ -1,17 +1,17 @@
 {
-  "name": "tubone24",
-  "version": "1.3.5",
-  "description": "A personal card for tubone24",
+  "name": "bata515",
+  "version": "1.0.0",
+  "description": "A personal card for bata515",
   "main": "/bin/card.js",
   "bin": {
-    "tubone24": "./bin/card.js"
+    "bata515": "./bin/card.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tubone24/npm_profile_card.git"
+    "url": "git+https://github.com/bata515/npm_profile_card.git"
   },
-  "homepage": "https://portfolio.tubone-project24.xyz/",
-  "author": "Yu Otsubo <tubo.yyyuuu@@gmail.com> (https://portfolio.tubone-project24.xyz/)",
+  "homepage": "https://batannu-profile-web.vercel.app/",
+  "author": "Ryuki Kawabata <longhui515@gmail.com> (https://batannu-profile-web.vercel.app/)",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
@@ -55,7 +55,7 @@
     "typescript": "4.6.2"
   },
   "bugs": {
-    "url": "https://github.com/tubone24/npm_profile_card/issues"
+    "url": "https://github.com/bata515/npm_profile_card/issues"
   },
   "dependencies": {
     "boxen": "4.1.0",

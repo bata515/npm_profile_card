@@ -44,7 +44,7 @@ const options = {
     padding: 1,
     margin: 1,
     borderStyle: "round",
-    borderColor: "white"
+    borderColor: "white",
 };
 const shibaInuArt = `_                          ,-､
 .:ヾ、            ,へ、__ /.  l
@@ -63,7 +63,7 @@ const shibaInuArt = `_                          ,-､
              ',  ヽ、\`:､_,.)
              └-‐'`;
 const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
 };
 const clearConsole = () => {
     process.stdout.write("\x1Bc");
@@ -76,13 +76,21 @@ const drawBox = (content, borderColor = "white") => {
         padding: 1,
         margin: 1,
         borderStyle: "round",
-        borderColor: borderColor
+        borderColor: borderColor,
     });
 };
 const generateColors = (count) => {
     const colors = [];
     for (let i = 1; i <= count; i++) {
-        const baseColors = ["green", "yellow", "blue", "magenta", "cyan", "white", "red"];
+        const baseColors = [
+            "green",
+            "yellow",
+            "blue",
+            "magenta",
+            "cyan",
+            "white",
+            "red",
+        ];
         colors.push(baseColors[i % baseColors.length]);
     }
     return colors;
@@ -135,7 +143,7 @@ function main() {
             const generateQRCode = () => {
                 return new Promise((resolve) => {
                     let qrString = "";
-                    qrcode_terminal_1.default.generate("https://portfolio.tubone-project24.xyz", { small: true }, (qr) => {
+                    qrcode_terminal_1.default.generate("https://batannu-profile-web.vercel.app/", { small: true }, (qr) => {
                         qrString = qr;
                         resolve(qrString);
                     });
@@ -156,7 +164,15 @@ function main() {
             console.log(drawBox(displayContent));
             console.log(combinedArt.join("\n"));
             yield sleep(300);
-            const colors = ["green", "yellow", "blue", "magenta", "cyan", "red", "white"];
+            const colors = [
+                "green",
+                "yellow",
+                "blue",
+                "magenta",
+                "cyan",
+                "red",
+                "white",
+            ];
             for (let i = 0; i < 30; i++) {
                 const color = colors[i % colors.length];
                 clearConsole();
@@ -175,17 +191,17 @@ function main() {
 }
 exports.main = main;
 const data = {
-    name: chalk_1.default.white("               Yu Otsubo"),
-    handle: chalk_1.default.white("tubone24"),
-    work: chalk_1.default.white("FullCycle Developer") + chalk_1.default.cyan("@") + chalk_1.default.greenBright("KAG"),
-    twitter: chalk_1.default.gray("https://twitter.com/") + chalk_1.default.cyan("meitante1conan"),
-    github: chalk_1.default.gray("https://github.com/") + chalk_1.default.green("tubone24"),
-    facebook: chalk_1.default.gray("https://www.facebook.com/") + chalk_1.default.blueBright("yu.otsubo"),
-    portfolio: chalk_1.default.cyan("https://portfolio.tubone-project24.xyz"),
-    blog: chalk_1.default.cyan("https://blog.tubone-project24.xyz"),
-    contact: chalk_1.default.cyan("https://portfolio.tubone-project24.xyz/#contact"),
-    instagram: chalk_1.default.gray("https://www.instagram.com/") + chalk_1.default.magenta("mugimugi.cutedog/"),
-    npx: chalk_1.default.red("npx") + " " + chalk_1.default.white("tubone24"),
+    name: chalk_1.default.white("               Ryuki Kawabata"),
+    handle: chalk_1.default.white("bata515"),
+    work: chalk_1.default.white("Developer") + chalk_1.default.cyan("@") + chalk_1.default.greenBright("BroadLeaf"),
+    twitter: chalk_1.default.gray("https://twitter.com/") + chalk_1.default.cyan("shiningdoragon"),
+    github: chalk_1.default.gray("https://github.com/") + chalk_1.default.green("bata515"),
+    facebook: chalk_1.default.gray("TBD") + chalk_1.default.blueBright(""),
+    portfolio: chalk_1.default.cyan("https://hatiware-ai-chat.onrender.com/"),
+    blog: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
+    contact: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
+    instagram: chalk_1.default.gray("TBD") + chalk_1.default.magenta(""),
+    npx: chalk_1.default.red("npx") + " " + chalk_1.default.white("bata515"),
     labelWork: chalk_1.default.white.bold("       Work:"),
     labelTwitter: chalk_1.default.white.bold("    Twitter:"),
     labelGitHub: chalk_1.default.white.bold("     GitHub:"),
@@ -194,7 +210,7 @@ const data = {
     labelPortfolio: chalk_1.default.white.bold("  Portfolio:"),
     labelBlog: chalk_1.default.white.bold("       Blog:"),
     labelContact: chalk_1.default.white.bold("    Contact:"),
-    labelCard: chalk_1.default.white.bold("       Card:")
+    labelCard: chalk_1.default.white.bold("       Card:"),
 };
 const newline = "\n";
 const heading = `${data.name} / ${data.handle}`;
@@ -208,19 +224,30 @@ const bloging = `${data.labelBlog}  ${data.blog}`;
 const contact = `${data.labelContact}  ${data.contact}`;
 const carding = `${data.labelCard}  ${data.npx}`;
 const output = heading +
-    newline + newline +
-    working + newline + newline +
-    twittering + newline +
-    facebooking + newline +
-    instagraming + newline +
-    githubing + newline +
-    portfolio + newline +
-    bloging + newline +
-    contact + newline + newline +
+    newline +
+    newline +
+    working +
+    newline +
+    newline +
+    twittering +
+    newline +
+    facebooking +
+    newline +
+    instagraming +
+    newline +
+    githubing +
+    newline +
+    portfolio +
+    newline +
+    bloging +
+    newline +
+    contact +
+    newline +
+    newline +
     carding;
 const generateQRCodeSync = () => {
     let qrString = "";
-    qrcode_terminal_1.default.generate("https://portfolio.tubone-project24.xyz", { small: true }, (qr) => {
+    qrcode_terminal_1.default.generate("https://batannu-profile-web.vercel.app/", { small: true }, (qr) => {
         qrString = qr;
     });
     return qrString;

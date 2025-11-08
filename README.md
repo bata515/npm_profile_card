@@ -10,7 +10,7 @@
 npx bata515
 ```
 
-![demo](./docs/images/dmeo.gif)
+![demo](./docs/images/demo.gif)
 
 ## develop
 

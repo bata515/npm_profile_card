@@ -46,22 +46,20 @@ const options = {
     borderStyle: "round",
     borderColor: "white",
 };
-const shibaInuArt = `_                          ,-､
-.:ヾ、            ,へ、__ /.  l
-.    l            |   /    ｀ヽ|
->､__」       __ 人,/   tｯ  \`ｰ┐
-\`  ー―‐r'   :.        _ .. ┴ '′
-           ;     :.       \`ｰ-r┘
-.           ;      :.､__ ＿ _ﾉ
-         ;    ;.    └ー-rｨ
-         ',.   ｀'    ,..  -ﾉ
-/\`ｰ ､    }      ,:  __, /
-       \` -{    ,r‐i´   l
-           l    l   ',.   |
-            |   |    '   |
-            |.  l.    }  l_
-             ',  ヽ、\`:､_,.)
-             └-‐'`;
+const catArt = `
+  /\\_/\\         
+ (  •ω• )
+ / >   < \\
+(   =^=   )
+ \\  --  /
+  '-----'
+  /\\_/\\      
+ (  •ω• )
+ / >   < \\
+(   =^=   )
+ \\  --  /
+  '-----'
+`;
 const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
 };
@@ -151,11 +149,11 @@ function main() {
             };
             const qrCodeString = yield generateQRCode();
             const qrCodeLines = qrCodeString.split("\n");
-            const shibaInuLines = shibaInuArt.split("\n");
+            const catLines = catArt.split("\n");
             const combinedArt = [];
-            const maxLines = Math.max(shibaInuLines.length, qrCodeLines.length);
+            const maxLines = Math.max(catLines.length, qrCodeLines.length);
             for (let i = 0; i < maxLines; i++) {
-                const shibaLine = i < shibaInuLines.length ? shibaInuLines[i] : "";
+                const shibaLine = i < catLines.length ? catLines[i] : "";
                 const qrLine = i < qrCodeLines.length ? qrCodeLines[i] : "";
                 const padding = 5;
                 combinedArt.push(qrLine + " ".repeat(padding) + chalk_1.default.yellow(shibaLine));
@@ -265,6 +263,6 @@ const combineArt = (shibaArt, qrCode) => {
     }
     return combined.join("\n");
 };
-const finalOutput = chalk_1.default.green((0, boxen_1.default)(output, options)) + newline + chalk_1.default.yellow(shibaInuArt);
+const finalOutput = chalk_1.default.green((0, boxen_1.default)(output, options)) + newline + chalk_1.default.yellow(catArt);
 main();
 //# sourceMappingURL=build.js.map

@@ -15,22 +15,20 @@ const options: Options = {
   borderColor: "white",
 };
 
-const shibaInuArt = `_                          ,-､
-.:ヾ、            ,へ、__ /.  l
-.    l            |   /    ｀ヽ|
->､__」       __ 人,/   tｯ  \`ｰ┐
-\`  ー―‐r'   :.        _ .. ┴ '′
-           ;     :.       \`ｰ-r┘
-.           ;      :.､__ ＿ _ﾉ
-         ;    ;.    └ー-rｨ
-         ',.   ｀'    ,..  -ﾉ
-/\`ｰ ､    }      ,:  __, /
-       \` -{    ,r‐i´   l
-           l    l   ',.   |
-            |   |    '   |
-            |.  l.    }  l_
-             ',  ヽ、\`:､_,.)
-             └-‐'`;
+const catArt = `
+  /\\_/\\         
+ (  •ω• )
+ / >   < \\
+(   =^=   )
+ \\  --  /
+  '-----'
+  /\\_/\\      
+ (  •ω• )
+ / >   < \\
+(   =^=   )
+ \\  --  /
+  '-----'
+`;
 
 // アニメーション用の関数
 const sleep = (ms: number): Promise<void> => {
@@ -164,15 +162,15 @@ async function main(): Promise<void> {
     const qrCodeLines = qrCodeString.split("\n");
 
     // 柴犬アートとQRコードを横に並べる
-    const shibaInuLines = shibaInuArt.split("\n");
+    const catLines = catArt.split("\n");
     const combinedArt: string[] = [];
 
     // 2つのアートの最大行数を取得
-    const maxLines = Math.max(shibaInuLines.length, qrCodeLines.length);
+    const maxLines = Math.max(catLines.length, qrCodeLines.length);
 
     // 各行を結合（QRコードを左、柴犬アートを右に配置）
     for (let i = 0; i < maxLines; i++) {
-      const shibaLine = i < shibaInuLines.length ? shibaInuLines[i] : "";
+      const shibaLine = i < catLines.length ? catLines[i] : "";
       const qrLine = i < qrCodeLines.length ? qrCodeLines[i] : "";
       // QRコードと柴犬アートの間のスペース
       const padding = 5;
@@ -306,9 +304,9 @@ const combineArt = (shibaArt: string, qrCode: string): string => {
 // 注意: この部分は実際には使用されていないようですが、
 // 必要に応じて以下のようにfinalOutputを更新できます
 // const qrCode = generateQRCodeSync();
-// const finalOutput = chalk.green(boxen(output, options)) + newline + combineArt(shibaInuArt, qrCode);
+// const finalOutput = chalk.green(boxen(output, options)) + newline + combineArt(catArt, qrCode);
 const finalOutput =
-  chalk.green(boxen(output, options)) + newline + chalk.yellow(shibaInuArt);
+  chalk.green(boxen(output, options)) + newline + chalk.yellow(catArt);
 
 // メイン関数を実行
 main();

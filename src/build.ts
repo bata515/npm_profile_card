@@ -218,7 +218,9 @@ const data = {
   twitter: chalk.gray("https://twitter.com/") + chalk.cyan("shiningdoragon"),
   github: chalk.gray("https://github.com/") + chalk.green("bata515"),
   facebook: chalk.gray("TBD") + chalk.blueBright(""),
-  portfolio: chalk.cyan("https://hatiware-ai-chat.onrender.com/"),
+  portfolio: chalk.cyan(
+    "https://hatiware-ai-chat-484250524840.asia-northeast1.run.app/"
+  ),
   blog: chalk.cyan("https://batannu-profile-web.vercel.app/"),
   contact: chalk.cyan("https://batannu-profile-web.vercel.app/"),
   instagram: chalk.gray("TBD") + chalk.magenta(""),

@@ -195,7 +195,7 @@ const data = {
     twitter: chalk_1.default.gray("https://twitter.com/") + chalk_1.default.cyan("shiningdoragon"),
     github: chalk_1.default.gray("https://github.com/") + chalk_1.default.green("bata515"),
     facebook: chalk_1.default.gray("TBD") + chalk_1.default.blueBright(""),
-    portfolio: chalk_1.default.cyan("https://hatiware-ai-chat.onrender.com/"),
+    portfolio: chalk_1.default.cyan("https://hatiware-ai-chat-484250524840.asia-northeast1.run.app/"),
     blog: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
     contact: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
     instagram: chalk_1.default.gray("TBD") + chalk_1.default.magenta(""),

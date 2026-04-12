@@ -16,18 +16,15 @@ const options: Options = {
 };
 
 const catArt = `
-  /\\_/\\         
- (  •ω• )
- / >   < \\
-(   =^=   )
- \\  --  /
-  '-----'
-  /\\_/\\      
- (  •ω• )
- / >   < \\
-(   =^=   )
- \\  --  /
-  '-----'
+          ) ) ) ) ) )
+         ( ( ( ( ( (
+      _________________
+     |                 |\\
+     |    I  ♥         | |
+     |    Coffee!      | |
+     |                 |/
+      \\               /
+       \\_____________/
 `;
 
 // アニメーション用の関数
@@ -161,30 +158,38 @@ async function main(): Promise<void> {
     const qrCodeString = await generateQRCode();
     const qrCodeLines = qrCodeString.split("\n");
 
-    // 柴犬アートとQRコードを横に並べる
-    const catLines = catArt.split("\n");
-    const combinedArt: string[] = [];
+    // コーヒーカップアートとQRコードを横に並べる
+    const coffeeLines = catArt.split("\n");
 
     // 2つのアートの最大行数を取得
-    const maxLines = Math.max(catLines.length, qrCodeLines.length);
+    const maxLines = Math.max(coffeeLines.length, qrCodeLines.length);
 
-    // 各行を結合（QRコードを左、柴犬アートを右に配置）
-    for (let i = 0; i < maxLines; i++) {
-      const shibaLine = i < catLines.length ? catLines[i] : "";
-      const qrLine = i < qrCodeLines.length ? qrCodeLines[i] : "";
-      // QRコードと柴犬アートの間のスペース
-      const padding = 5;
-      combinedArt.push(qrLine + " ".repeat(padding) + chalk.yellow(shibaLine));
-    }
+    // レインボーカラーの配列
+    const rainbowColors = [
+      chalk.red,
+      chalk.yellow,
+      chalk.green,
+      chalk.cyan,
+      chalk.blue,
+      chalk.magenta,
+    ];
 
-    // 結合したアートを表示
+    // QRコードとコーヒーカップの間のスペース
+    const padding = 5;
+
+    // 結合したアートを表示（レインボー）
     clearConsole();
     console.log(drawBox(displayContent));
-    console.log(combinedArt.join("\n"));
+    for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+      const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+      const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+      const colorIndex = lineIndex % rainbowColors.length;
+      console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+    }
     await sleep(300);
 
-    // ボーダーの色を変化させる
-    const colors = [
+    // ボーダーとコーヒーカップの色を変化させる（レインボーアニメーション）
+    const borderColors = [
       "green",
       "yellow",
       "blue",
@@ -194,17 +199,30 @@ async function main(): Promise<void> {
       "white",
     ];
     for (let i = 0; i < 30; i++) {
-      const color = colors[i % colors.length];
+      const borderColor = borderColors[i % borderColors.length];
       clearConsole();
-      console.log(drawBox(displayContent, color));
-      console.log(combinedArt.join("\n"));
+      console.log(drawBox(displayContent, borderColor));
+
+      // レインボー効果を各行に適用（アニメーション）
+      for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+        const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+        const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+        // 各フレームで色をシフト
+        const colorIndex = (lineIndex + i) % rainbowColors.length;
+        console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+      }
       await sleep(100);
     }
 
-    // 最終的な表示
+    // 最終的な表示（レインボー）
     clearConsole();
     console.log(drawBox(displayContent, "green"));
-    console.log(combinedArt.join("\n"));
+    for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+      const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+      const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+      const colorIndex = lineIndex % rainbowColors.length;
+      console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+    }
   } catch (error) {
     console.error("エラーが発生しました:", error);
   }
@@ -230,8 +248,8 @@ const data = {
   labelGitHub: chalk.white.bold("     GitHub:"),
   labelFacebook: chalk.white.bold("   Facebook:"),
   labelInstagram: chalk.white.bold("  Instagram:"),
-  labelPortfolio: chalk.white.bold("  Portfolio:"),
-  labelBlog: chalk.white.bold("       Blog:"),
+  labelPortfolio: chalk.white.bold("   Contents:"),
+  labelBlog: chalk.white.bold("    Profile:"),
   labelContact: chalk.white.bold("    Contact:"),
   labelCard: chalk.white.bold("       Card:"),
 };

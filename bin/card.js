@@ -47,18 +47,15 @@ const options = {
     borderColor: "white",
 };
 const catArt = `
-  /\\_/\\         
- (  •ω• )
- / >   < \\
-(   =^=   )
- \\  --  /
-  '-----'
-  /\\_/\\      
- (  •ω• )
- / >   < \\
-(   =^=   )
- \\  --  /
-  '-----'
+          ) ) ) ) ) )
+         ( ( ( ( ( (
+      _________________
+     |                 |\\
+     |    I  ♥         | |
+     |    Coffee!      | |
+     |                 |/
+      \\               /
+       \\_____________/
 `;
 const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -149,20 +146,27 @@ function main() {
             };
             const qrCodeString = yield generateQRCode();
             const qrCodeLines = qrCodeString.split("\n");
-            const catLines = catArt.split("\n");
-            const combinedArt = [];
-            const maxLines = Math.max(catLines.length, qrCodeLines.length);
-            for (let i = 0; i < maxLines; i++) {
-                const shibaLine = i < catLines.length ? catLines[i] : "";
-                const qrLine = i < qrCodeLines.length ? qrCodeLines[i] : "";
-                const padding = 5;
-                combinedArt.push(qrLine + " ".repeat(padding) + chalk_1.default.yellow(shibaLine));
-            }
+            const coffeeLines = catArt.split("\n");
+            const maxLines = Math.max(coffeeLines.length, qrCodeLines.length);
+            const rainbowColors = [
+                chalk_1.default.red,
+                chalk_1.default.yellow,
+                chalk_1.default.green,
+                chalk_1.default.cyan,
+                chalk_1.default.blue,
+                chalk_1.default.magenta,
+            ];
+            const padding = 5;
             clearConsole();
             console.log(drawBox(displayContent));
-            console.log(combinedArt.join("\n"));
+            for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+                const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+                const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+                const colorIndex = lineIndex % rainbowColors.length;
+                console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+            }
             yield sleep(300);
-            const colors = [
+            const borderColors = [
                 "green",
                 "yellow",
                 "blue",
@@ -172,15 +176,25 @@ function main() {
                 "white",
             ];
             for (let i = 0; i < 30; i++) {
-                const color = colors[i % colors.length];
+                const borderColor = borderColors[i % borderColors.length];
                 clearConsole();
-                console.log(drawBox(displayContent, color));
-                console.log(combinedArt.join("\n"));
+                console.log(drawBox(displayContent, borderColor));
+                for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+                    const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+                    const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+                    const colorIndex = (lineIndex + i) % rainbowColors.length;
+                    console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+                }
                 yield sleep(100);
             }
             clearConsole();
             console.log(drawBox(displayContent, "green"));
-            console.log(combinedArt.join("\n"));
+            for (let lineIndex = 0; lineIndex < maxLines; lineIndex++) {
+                const coffeeLine = lineIndex < coffeeLines.length ? coffeeLines[lineIndex] : "";
+                const qrLine = lineIndex < qrCodeLines.length ? qrCodeLines[lineIndex] : "";
+                const colorIndex = lineIndex % rainbowColors.length;
+                console.log(qrLine + " ".repeat(padding) + rainbowColors[colorIndex](coffeeLine));
+            }
         }
         catch (error) {
             console.error("エラーが発生しました:", error);
@@ -205,8 +219,8 @@ const data = {
     labelGitHub: chalk_1.default.white.bold("     GitHub:"),
     labelFacebook: chalk_1.default.white.bold("   Facebook:"),
     labelInstagram: chalk_1.default.white.bold("  Instagram:"),
-    labelPortfolio: chalk_1.default.white.bold("  Portfolio:"),
-    labelBlog: chalk_1.default.white.bold("       Blog:"),
+    labelPortfolio: chalk_1.default.white.bold("   Contents:"),
+    labelBlog: chalk_1.default.white.bold("    Profile:"),
     labelContact: chalk_1.default.white.bold("    Contact:"),
     labelCard: chalk_1.default.white.bold("       Card:"),
 };

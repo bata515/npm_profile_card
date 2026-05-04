@@ -208,7 +208,7 @@ const data = {
     work: chalk_1.default.white("Developer") + chalk_1.default.cyan("@") + chalk_1.default.greenBright("BroadLeaf"),
     twitter: chalk_1.default.gray("https://twitter.com/") + chalk_1.default.cyan("shiningdoragon"),
     github: chalk_1.default.gray("https://github.com/") + chalk_1.default.green("bata515"),
-    facebook: chalk_1.default.gray("TBD") + chalk_1.default.blueBright(""),
+    tiktok: chalk_1.default.gray("https://www.tiktok.com/@") + chalk_1.default.cyan("okoge229"),
     portfolio: chalk_1.default.cyan("https://hatiware-ai-chat-484250524840.asia-northeast1.run.app/"),
     blog: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
     contact: chalk_1.default.cyan("https://batannu-profile-web.vercel.app/"),
@@ -217,7 +217,7 @@ const data = {
     labelWork: chalk_1.default.white.bold("       Work:"),
     labelTwitter: chalk_1.default.white.bold("    Twitter:"),
     labelGitHub: chalk_1.default.white.bold("     GitHub:"),
-    labelFacebook: chalk_1.default.white.bold("   Facebook:"),
+    labelTiktok: chalk_1.default.white.bold("     Tiktok:"),
     labelInstagram: chalk_1.default.white.bold("  Instagram:"),
     labelPortfolio: chalk_1.default.white.bold("   Contents:"),
     labelBlog: chalk_1.default.white.bold("    Profile:"),
@@ -230,7 +230,7 @@ const working = `${data.labelWork}  ${data.work}`;
 const twittering = `${data.labelTwitter}  ${data.twitter}`;
 const instagraming = `${data.labelInstagram}  ${data.instagram}`;
 const githubing = `${data.labelGitHub}  ${data.github}`;
-const facebooking = `${data.labelFacebook}  ${data.facebook}`;
+const tiktoking = `${data.labelTiktok}  ${data.tiktok}`;
 const portfolio = `${data.labelPortfolio}  ${data.portfolio}`;
 const bloging = `${data.labelBlog}  ${data.blog}`;
 const contact = `${data.labelContact}  ${data.contact}`;
@@ -243,7 +243,7 @@ const output = heading +
     newline +
     twittering +
     newline +
-    facebooking +
+    tiktoking +
     newline +
     instagraming +
     newline +

@@ -235,7 +235,7 @@ const data = {
     chalk.white("Developer") + chalk.cyan("@") + chalk.greenBright("BroadLeaf"),
   twitter: chalk.gray("https://twitter.com/") + chalk.cyan("shiningdoragon"),
   github: chalk.gray("https://github.com/") + chalk.green("bata515"),
-  facebook: chalk.gray("TBD") + chalk.blueBright(""),
+  tiktok: chalk.gray("https://www.tiktok.com/@") + chalk.cyan("okoge229"),
   portfolio: chalk.cyan(
     "https://hatiware-ai-chat-484250524840.asia-northeast1.run.app/"
   ),
@@ -246,7 +246,7 @@ const data = {
   labelWork: chalk.white.bold("       Work:"),
   labelTwitter: chalk.white.bold("    Twitter:"),
   labelGitHub: chalk.white.bold("     GitHub:"),
-  labelFacebook: chalk.white.bold("   Facebook:"),
+  labelTiktok: chalk.white.bold("     Tiktok:"),
   labelInstagram: chalk.white.bold("  Instagram:"),
   labelPortfolio: chalk.white.bold("   Contents:"),
   labelBlog: chalk.white.bold("    Profile:"),
@@ -260,7 +260,7 @@ const working = `${data.labelWork}  ${data.work}`;
 const twittering = `${data.labelTwitter}  ${data.twitter}`;
 const instagraming = `${data.labelInstagram}  ${data.instagram}`;
 const githubing = `${data.labelGitHub}  ${data.github}`;
-const facebooking = `${data.labelFacebook}  ${data.facebook}`;
+const tiktoking = `${data.labelTiktok}  ${data.tiktok}`;
 const portfolio = `${data.labelPortfolio}  ${data.portfolio}`;
 const bloging = `${data.labelBlog}  ${data.blog}`;
 const contact = `${data.labelContact}  ${data.contact}`;
@@ -275,7 +275,7 @@ const output =
   newline +
   twittering +
   newline +
-  facebooking +
+  tiktoking +
   newline +
   instagraming +
   newline +

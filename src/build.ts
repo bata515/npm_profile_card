@@ -233,9 +233,9 @@ const data = {
   handle: chalk.white("bata515"),
   work:
     chalk.white("Developer") + chalk.cyan("@") + chalk.greenBright("BroadLeaf"),
-  twitter: chalk.gray("https://twitter.com/") + chalk.cyan("shiningdoragon"),
-  github: chalk.gray("https://github.com/") + chalk.green("bata515"),
-  tiktok: chalk.gray("https://www.tiktok.com/@") + chalk.cyan("okoge229"),
+  twitter: chalk.cyan("https://twitter.com/shiningdoragon"),
+  github: chalk.cyan("https://github.com/bata515"),
+  tiktok: chalk.cyan("https://www.tiktok.com/@okoge229"),
   portfolio: chalk.cyan(
     "https://hatiware-ai-chat-484250524840.asia-northeast1.run.app/"
   ),
